@@ -35,9 +35,9 @@ Start=$(date +"%s")
 DTBTOOL=$KERNEL_DIR/dtbTool
 cd $KERNEL_DIR
 export ARCH=arm64
-export CROSS_COMPILE="/home/$USER/toolchain/aarch64-linux-android-4.9/bin/aarch64-linux-android-"
-export LD_LIBRARY_PATH=home/$USER/toolchain/aarch64-linux-android-4.9/lib/
-STRIP="/home/$USER/toolchain/aarch64-linux-android-4.9/bin/aarch64-linux-android-strip"
+export CROSS_COMPILE="/home/$USER/Desktop/aarch64-cortex_a72.a53-linux-gnueabi/bin/aarch64-cortex_a72.a53-linux-gnueabi-"
+export LD_LIBRARY_PATH=home/$USER/Desktop/aarch64-cortex_a72.a53-linux-gnueabi/lib/
+STRIP="/home/$USER/Desktop/aarch64-cortex_a72.a53-linux-gnueabi/bin/aarch64-cortex_a72.a53-linux-gnueabi-strip"
 echo -e "$yellow Running make clean before compiling \n$white"
 make clean > /dev/null
 if [ $goodix == 2 ]; then
@@ -53,8 +53,8 @@ elif [ $qc == 1 ]; then
 git apply -R qc.patch > /dev/null 2>&1
 fi
 make lineageos_kenzo_defconfig
-export KBUILD_BUILD_HOST="lenovo"
-export KBUILD_BUILD_USER="umang"
+export KBUILD_BUILD_HOST="Ubuntu-Xenial"
+export KBUILD_BUILD_USER="minz1"
 make -j4
 time=$(date +"%d-%m-%y-%T")
 $DTBTOOL -2 -o $KERNEL_DIR/arch/arm64/boot/dt.img -s 2048 -p $KERNEL_DIR/scripts/dtc/ $KERNEL_DIR/arch/arm/boot/dts/
@@ -83,7 +83,7 @@ echo -e "$yellow\n Build succesful, generating flashable zip now \n $white"
 zip -r Radon-Kenzo-Cm-Ng.zip * > /dev/null
 End=$(date +"%s")
 Diff=$(($End - $Start))
-echo -e "$yellow $KERNEL_DIR/build/Radon-Kenzo-Cm-Ng.zip \n$white"
+echo -e "$yellow $KERNEL_DIR/build/Radon-Kenzo-CM-NG-MINZ.zip \n$white"
 echo -e "$gre << Build completed in $(($Diff / 60)) minutes and $(($Diff % 60)) seconds, variant($goodix$qc) >> \n $white"
 fi
 cd $KERNEL_DIR
