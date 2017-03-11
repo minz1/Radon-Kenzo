@@ -1,8 +1,9 @@
+
 diff --git a/arch/arm/boot/dts/qcom/kenzo/kenzo-msm8956-mtp.dtsi b/arch/arm/boot/dts/qcom/kenzo/kenzo-msm8956-mtp.dtsi
-index 876feb1..b5ca497 100644
+index 9abff37..d661f5f 100644
 --- a/arch/arm/boot/dts/qcom/kenzo/kenzo-msm8956-mtp.dtsi
 +++ b/arch/arm/boot/dts/qcom/kenzo/kenzo-msm8956-mtp.dtsi
-@@ -188,17 +188,6 @@
+@@ -186,17 +186,6 @@
  		vdd-supply = <&pm8950_l10>;
  	};
  
@@ -21,15 +22,15 @@ index 876feb1..b5ca497 100644
  		compatible = "goodix,fingerprint";
  		vcc_spi-supply  = <&pm8950_l10>;
 diff --git a/arch/arm64/configs/lineageos_kenzo_defconfig b/arch/arm64/configs/lineageos_kenzo_defconfig
-index f2ec980..e38b8ea 100644
+index 2b3067a..81c5650 100644
 --- a/arch/arm64/configs/lineageos_kenzo_defconfig
 +++ b/arch/arm64/configs/lineageos_kenzo_defconfig
-@@ -1604,7 +1604,7 @@ CONFIG_WAKE_GESTURES=y
+@@ -1625,7 +1625,7 @@ CONFIG_WAKE_GESTURES=y
  CONFIG_INPUT_MISC=y
  # CONFIG_INPUT_AD714X is not set
  # CONFIG_INPUT_BMA150 is not set
 -CONFIG_INPUT_FPC1020=y
 +CONFIG_INPUT_FPC1020=n
- CONFIG_INPUT_HBTP_INPUT=n
+ # CONFIG_INPUT_HBTP_INPUT is not set
  # CONFIG_INPUT_MMA8450 is not set
  # CONFIG_INPUT_MPU3050 is not set
